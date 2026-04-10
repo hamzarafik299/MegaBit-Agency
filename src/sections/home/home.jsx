@@ -3,6 +3,9 @@ import logo from "../../assets/logo.png";
 import BlurText from "../../animation/BlurText";
 import Object from "../../assets/Object.png";
 import fea from "../../assets/fea.png";
+import abst1 from "../../assets/abstract1.png";
+import abst2 from "../../assets/abstract2.png";
+import abst3 from "../../assets/abstract3.png";
 import Objet2 from "../../assets/obj1-1.png";
 
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -13,9 +16,10 @@ export default function Home() {
   };
 
   const { scrollY } = useScroll();
-
-  const rotate = useTransform(scrollY, [0, 1500], [0, -400]);
-  const translateY = useTransform(scrollY, [0, 1000], [0, -300]);
+   const width = useTransform(scrollY, [0, 3000], ["150px", "400px"]);
+  const translateDn = useTransform(scrollY, [0, 3000], [0, 400]);
+  const rotate = useTransform(scrollY, [0, 2000], [0, -400]);
+  const translateY = useTransform(scrollY, [0, 3000], [0, -400]);
 
   return (
     <div className="home">
@@ -61,15 +65,14 @@ export default function Home() {
                 onAnimationComplete={handleAnimationComplete}
               />
               <section>
-                 <BlurText
-                text="AGENCY"
-                delay={200}
-                animateBy="words"
-                direction="top"
-                onAnimationComplete={handleAnimationComplete}
-              />
+                <BlurText
+                  text="AGENCY"
+                  delay={200}
+                  animateBy="words"
+                  direction="top"
+                  onAnimationComplete={handleAnimationComplete}
+                />
               </section>
-             
             </h1>
           </div>
           <hr />
@@ -150,7 +153,6 @@ export default function Home() {
               <div className="elemnts">
                 <h6>Web Design / SEO</h6>
                 <h6>social media marketing</h6>
-                
               </div>
               <h6 className="branding">Branding</h6>
             </div>
@@ -160,7 +162,23 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="thirdSec">
+        <div className="first-one">
+          <h1>Stratégies digitales basées sur les données</h1>
+          <motion.img src={abst2} style={{ y: translateDn }} />
+        </div>
+        <div className="second-one">
+          <motion.img src={abst1} alt="" style={{ y: translateY }} />
+          <h1>Création de contenu visuel & Animation</h1>
+          
+        </div>
+        <div className="third-one">
+          <h1> Identité de marque forte et impactante</h1>
+          <motion.img src={abst3} alt="" style={{ width }}  />
+        </div>
       </div>
+      </div>
+      
     </div>
   );
 }
