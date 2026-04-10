@@ -1,5 +1,5 @@
 import "./home.css";
-import logo from "../../assets/megabit-logo.png";
+import logo from "../../assets/logo.png";
 import BlurText from "../../animation/BlurText";
 import Object from "../../assets/Object.png";
 import fea from "../../assets/fea.png";
@@ -54,12 +54,22 @@ export default function Home() {
           <div className="firstText">
             <h1>
               <BlurText
-                text="MEGABIT AGENCY"
+                text="MEGABIT"
                 delay={200}
                 animateBy="words"
                 direction="top"
                 onAnimationComplete={handleAnimationComplete}
               />
+              <section>
+                 <BlurText
+                text="AGENCY"
+                delay={200}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={handleAnimationComplete}
+              />
+              </section>
+             
             </h1>
           </div>
           <hr />
@@ -138,11 +148,11 @@ export default function Home() {
                 votre audience.
               </h3>
               <div className="elemnts">
-                <h3>Web Design / SEO</h3>
-                <h3>social media marketing</h3>
+                <h6>Web Design / SEO</h6>
+                <h6>social media marketing</h6>
                 
               </div>
-              <h3 className="branding">Branding</h3>
+              <h6 className="branding">Branding</h6>
             </div>
 
             <div className="containerImg">

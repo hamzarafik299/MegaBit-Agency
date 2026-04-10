@@ -7,7 +7,7 @@ export default function Services() {
 
   useEffect(() => {
     const observer = createObserver(() => {
-      setIsVisible(true); // 👈 trigger style change
+      setIsVisible(true); 
     });
 
     if (ref.current) observer.observe(ref.current);

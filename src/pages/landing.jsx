@@ -3,6 +3,7 @@
 // import Navbar from "../components/Navbar";
 import Home from "../sections/home/home.jsx";
 import Services from "../sections/services/services.jsx";
+import WeAre from "../sections/weare/weare.jsx";
 import'./landing.css';
 
 
@@ -30,9 +31,11 @@ export default function Landing() {
   </div>
 
   {/* Content */}
-  <div style={{ position: "relative", zIndex: 1 }}>
+  <div>
     <Home />
+      <WeAre />
     <Services />
+  
   </div>
 
 </div>

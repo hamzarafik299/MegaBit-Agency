@@ -9,6 +9,9 @@
 .home{
    background-image: url("../../assets/background.jpeg");
 }
+.body{
+ 
+}
 /* Reset de base */
 * {
   margin: 0;
@@ -22,19 +25,26 @@
   min-height: 100vh;
     /* background-image: url("../../assets/background.jfif");
     background-size: cover;
+    
     background: opacity(0.5); */
+    
 }
 
 /* Header noir */
 .header {
   /* background-color: black; */
   height: 100px; 
-
+width: 100%;
   /* centrage vertical + horizontal */
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 2;
+  position: fixed;
+  background: rgba(255, 255, 255, 0); /* semi-transparent */
+  backdrop-filter: blur(10px);
   /* border-bottom: solid var(--main-color) 1px;; */
+  border-radius: 5px;
 
 }
 .eft {
@@ -87,7 +97,7 @@
   left: 0px;
 }
 hr{
-    width: 50%;
+    width: 40%;
     margin:30px 30px;
 }
 .eft:before {
@@ -116,9 +126,10 @@ hr{
 }
 
 .logo img{
-   width: 100px;
+   width: 170px;
    height: auto;  
-   margin: 10px 10px;          
+   margin: 20px 10px;   
+   opacity: 0.65;       
 }
 
 /* Nav container */
@@ -240,6 +251,7 @@ hr{
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin-top: 100px;
 }
 .text h3{
   font-size: 20px;
@@ -398,18 +410,30 @@ color: #9984D4;
 .leftCnt {
   background-color: #0000005d;
   padding: 20px;
-  width: 25%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+
 }
 .leftCnt img{
-  width: 100%;
+  width: 400px;
   height: auto;
    will-change: transform;
+   position: absolute;
+   top: 40%;
+  
 }
 .rightCnt {
   background-color: #0000005d;
  
   width: 65%;
   display: flex;
+    border-radius: 20px;
+
   justify-content: space-between;
 }
 .containerImg {
@@ -528,18 +552,18 @@ color: #9984D4;
     margin: 20px;
 
 }
-.elemnts h3:nth-child(1) {
+.elemnts h6:nth-child(1) {
   background-color: #230c33;
-  padding: 10px;
+  padding: 10px 0;
   margin: 10px;
   border-radius: 10px;
-  box-shadow: 3px 3px 10px #0000005d;
-  width: 90%;
+   width: 90%;
+
 }
 
-.elemnts h3:nth-child(2) {
+.elemnts h6:nth-child(2) {
  background-color: #592e83;
-padding: 10px;
+padding: 10px 0;
   margin: 10px;
   border-radius: 10px;
    width: 90%;
@@ -547,9 +571,12 @@ padding: 10px;
 
 .branding{
     background-color: #230c33;
-    padding: 10px;
-    margin: 10px 20px;
-    border-radius: 10px;
-    box-shadow: 3px 3px 10px #0000005d;
-    width: 60%;
+ padding: 10px 0;
+  margin: 10px    30px;
+  border-radius: 10px;
+   width: 50%;
+
+}
+.firstText section{
+  margin-left: 150px;
 }
