@@ -1,64 +1,59 @@
 import "./services.css";
 import { useEffect, useRef, useState } from "react";
 import { createObserver } from "../../animation/Observator";
+import Carousel from "../carasouls/Carousel.jsx";
+
 export default function Services() {
-  const ref = useRef(null);
+  const headerRef = useRef(null);
+  const footerRef = useRef(null);
+
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const observer = createObserver(() => {
-      setIsVisible(true); 
+    const observer = createObserver((entry, isVisible) => {
+      setIsVisible(isVisible);
     });
 
-    if (ref.current) observer.observe(ref.current);
+    const elements = [headerRef.current, footerRef.current].filter(Boolean);
+
+    elements.forEach((el) => observer.observe(el));
 
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      elements.forEach((el) => observer.unobserve(el));
     };
   }, []);
 
   return (
-    <div className="services">
-      <div
-        ref={ref}
-        className={isVisible ? "servicesHeader show" : "servicesHeader"}
-      >
-        <h2>Services</h2>
-      </div>
-      <div ref={ref} className={isVisible ? "cards show" : "cards"}>
-        
-        <div  ref={ref} className={isVisible ? "left card show" : "left card"}>
-            <div>
-                <h4>Service 1</h4>
-            </div>
+    <div className="services" id="services">
+      <div className={isVisible ? "services-container show" : "services-container"}>
+
+        {/* HEADER */}
+        <div
+          ref={headerRef}
+          className={isVisible ? "servicesHeader show" : "servicesHeader"}
+        >
+          <h1 className="btn-shine">Services</h1>
         </div>
-        <div  ref={ref} className={isVisible ? "mid card show" : "mid card"}>
-            <div>
-                <h4>Service 1</h4>
-            </div>
+
+        {/* CONTENT */}
+        <div className="servicesDes">
+          <h3>Services Digitaux sur Mesure pour Vous</h3>
+          <Carousel />
         </div>
-        <div  ref={ref} className={isVisible ? "right card show" : "right   card"}>
-            <div>
-                <h4>Service 1</h4>
-            </div>
+
+        {/* FOOTER */}
+        <div
+          ref={footerRef}
+          className={isVisible ? "servicesFooter show" : "servicesFooter"}
+        >
+          {/* <div className="servicesFooter-container">
+            <p>
+              Let’s grow your business together{" "}
+              <a href="#contact">Get a Free Quote</a>
+            </p>
+          </div> */}
         </div>
-        <div  ref={ref} className={isVisible ? "left card show" : "left card"}>
-            <div>
-                <h4>Service 1</h4>
-            </div>
-        </div>
-        <div  ref={ref} className={isVisible ? "mid card show" : "mid card"}>
-            <div>
-                <h4>Service 1</h4>
-            </div>
-        </div>
-        <div  ref={ref} className={isVisible ? "right card show" : "right   card"}>
-            <div>
-                <h4>Service 1</h4>
-            </div>
-        </div>
-          
-        
+
       </div>
     </div>
   );

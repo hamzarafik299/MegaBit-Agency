@@ -7,10 +7,12 @@ import abst1 from "../../assets/abstract1.png";
 import abst2 from "../../assets/abstract2.png";
 import abst3 from "../../assets/abstract3.png";
 import Objet2 from "../../assets/obj1-1.png";
+import { useEffect, useState } from "react";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Home() {
+  
   const handleAnimationComplete = () => {
     console.log("All letters have animated!");
   };
@@ -20,11 +22,29 @@ export default function Home() {
   const translateDn = useTransform(scrollY, [0, 3000], [0, 400]);
   const rotate = useTransform(scrollY, [0, 2000], [0, -400]);
   const translateY = useTransform(scrollY, [0, 3000], [0, -400]);
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        // scrolling down
+        setShow(false);
+      } else {
+        // scrolling up
+        setShow(true);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
   return (
-    <div className="home">
+    <div className="home" id="home">
       {/* HEADER */}
-      <div className="header">
+      <div  className={`header ${show ? "show" : "hide"}`}>
         <div className="logo">
           <img src={logo} alt="logo" />
         </div>
@@ -32,19 +52,19 @@ export default function Home() {
         <nav className="navContainer">
           <ul className="nav">
             <li>
-              <button className="eft">HOME</button>
+              <button className="eft"><a className="eft" href="#home">HOME</a></button>
             </li>
             <li>
-              <button className="eft">ABOUT</button>
+              <button className="eft"><a className="eft" href="#about">ABOUT</a></button>
             </li>
             <li>
-              <button className="eft">SERVICES</button>
+              <button className="eft"><a className="eft" href="#services">SERVICES</a></button>
             </li>
             <li>
-              <button className="eft">PROJETS</button>
+              <button className="eft"><a className="eft" href="#projects">PROJETS</a></button>
             </li>
             <li>
-              <button className="eft">CONTACT</button>
+              <button className="eft"><a className="eft" href="#contact">CONTACT</a></button>
             </li>
           </ul>
         </nav>
@@ -121,7 +141,7 @@ export default function Home() {
       </div>
 
       {/* SECOND SECTION */}
-      <div className="secondSlide">
+      <div className="secondSlide" id="about">
         <h1 className="btn-shine">Nos fonctionnalités</h1>
 
         <h2>

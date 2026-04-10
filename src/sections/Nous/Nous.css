@@ -1,0 +1,71 @@
+.nous{
+    height: 100vh;
+    background-color: #2c184147;    
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+.nous h1{
+    font-family: poppins, sans-serif;
+    font-weight: bold;
+    font-size: 50px;text-align: center;
+}
+.nousHeader {
+   opacity: 0;
+    transition: all 1s ease;
+}
+.nousHeader.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 20px;
+  padding: 20px;
+  margin: 50px auto; /* Center the grid instead of using left/right margins */
+  height: 60vh;
+  max-width: 100%; /* Ensure grid doesn't exceed container width */
+  box-sizing: border-box;
+}
+
+.Ncard {
+  background: rgba(255, 255, 255, 0.205);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 18px;
+  box-shadow: 0 4px 15px #663399;
+  width: 100%; /* Use full width of grid cell */
+  height: 180px;
+  max-width: 400px; /* Set a reasonable max width */
+  display: flex;
+  justify-self: center; /* centers horizontally in grid cell */
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+.Ncard h4 {
+  font-family: poppins, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #663399;
+}
+.Ncard p {
+  font-family: poppins, sans-serif;
+  color: #ffffff75;
+  font-size: 16px;
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    margin: 30px auto;
+  }
+  .Ncard {
+    width: 100%;
+    max-width: none;
+  }
+}

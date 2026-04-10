@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 import Landing from "./pages/landing.jsx";
-// import './App.css';
+import './App.css';
 
 function App() {
 

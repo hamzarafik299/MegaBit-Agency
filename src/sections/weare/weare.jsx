@@ -3,12 +3,9 @@ import bg1 from "../../assets/bg1.jpg";
 import bg5 from "../../assets/performance.png";
 import AnimatedCounter from "../../animation/counter.jsx";
 import bg6 from "../../assets/cogwheel.png";
-import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function WeAre() {
-  const { scrollY } = useScroll();
 
-  const rotate = useTransform(scrollY, [0, 3000], [0, -500]);
 
   return (
     <div className="weare">
@@ -40,17 +37,22 @@ export default function WeAre() {
         <div className="baki">
           <div className="optimisation">
             <div className="block1">
-              <div className="blockImage"><img src={bg5} /></div>
-              <div className="blockText"> <h1>Suivi & optimisation continue</h1>
-              <h4>
-                Nous analysons et améliorons en continu vos performances
-                digitales pour garantir des résultats durables
-              </h4></div>
-             
+              <div className="blockImage">
+                <img src={bg5} />
+              </div>
+              <div className="blockText">
+                <h1>Suivi & optimisation continue</h1>
+                <h4>
+                  Nous analysons et améliorons en continu vos performances
+                  digitales pour garantir des résultats durables
+                </h4>
+              </div>
             </div>
 
             <div className="block2">
-              <div className="blockImage"><img src={bg6} /></div>
+              <div className="blockImage">
+                <img src={bg6} />
+              </div>
               <div className="blockText">
                 <h1>Performance & sécurité</h1>
                 <h4>

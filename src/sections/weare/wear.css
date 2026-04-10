@@ -1,6 +1,6 @@
 .weare{
-    height: 100vh;
-    background-color: rgb(44, 28, 61);
+    height: 110vh;
+    background-color: rgb(0, 0, 0);
     font-family: poppins,sans-serif;
 }
 .weare h1{
@@ -21,10 +21,13 @@
     text-align: center;
 }
 .animated-counter h3{
-  color: #CAA8F5;
+   color: #CAA8F5;
     font-size: 4rem;
     font-weight: 600;
     line-height: 1.5;
+    position: absolute;
+        top: 0%;
+    left: 7%;
 }
 .wearCtn{
     display: flex;
@@ -46,7 +49,7 @@
 .weareImg img{
     width:100%;
    height:100%;
-  
+  margin: 0 10px;
     border-radius: 40px;
 }
 .weareText{
@@ -55,6 +58,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
     padding: 20px;
     width: 33%;
     height:450px;
@@ -64,8 +68,17 @@
     font-size: 1.2rem;
     font-weight: 600;
     line-height: 1.2;
-margin-bottom: 30px;    
+margin-bottom: 30px;   
+position: absolute; 
+  top: 20%;
+    left: 7%;
 }
+.weareText ul{
+  top: 40%;
+  position: absolute;
+    left: 10%;
+}
+
 .weareText li{
     color: #fff;
     font-size: 01.2rem;
@@ -98,6 +111,7 @@ margin-bottom: 30px;
     height:450px;
     background-color: #0000005d;
     overflow: hidden;
+    margin: 0 8px;
 }
 .baki h1{
     font-size: 0.8rem;
@@ -159,7 +173,7 @@ margin-bottom: 30px;
     line-height: 1.2;
 }
 .blockText h1{
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 20px 0;
     font-weight: 800;
     line-height: 1.2;
