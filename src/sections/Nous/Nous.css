@@ -9,6 +9,7 @@
     font-family: poppins, sans-serif;
     font-weight: bold;
     font-size: 50px;text-align: center;
+    justify-self: center;
 }
 .nousHeader {
    opacity: 0;
@@ -68,4 +69,24 @@
     width: 100%;
     max-width: none;
   }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin: 40px auto;
+  }
+}
+
+.nous {
+  padding: 60px 20px;
+}
+
+.grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.Ncard {
+  min-height: 220px;
 }

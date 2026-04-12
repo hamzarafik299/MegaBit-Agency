@@ -109,3 +109,17 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 } */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #04040b;
+  color: #ffffff;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}

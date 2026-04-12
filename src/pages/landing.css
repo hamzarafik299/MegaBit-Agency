@@ -3,8 +3,15 @@ body {
   cursor: none;
   background-color: black;
 }
-html, body {
+body {
   overflow-x: hidden;
+}
+/* * {
+  outline: 1px solid red;
+} */
+html, body {
+  max-width: 100%;
+  
 }
 * {
   cursor: none !important;
@@ -37,3 +44,8 @@ html, body {
   transition: transform 0.15s ease-out;
   z-index: 9999;
 }
+@media (max-width: 600px) {
+  .cursor-dot,.cursor-ring {
+    display: none;
+    
+  }}

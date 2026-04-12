@@ -1,5 +1,5 @@
 .weare{
-    height: 110vh;
+    min-height: 100vh;
     background-color: rgb(0, 0, 0);
     font-family: poppins,sans-serif;
 }
@@ -64,7 +64,7 @@
     height:450px;
 }
 .weareText h4{
-    color: #000;
+    color: #fff;
     font-size: 1.2rem;
     font-weight: 600;
     line-height: 1.2;
@@ -182,3 +182,164 @@ position: absolute;
     color: #CAA8F5;
     text-align: center;
 }
+
+/* Responsive styles */
+.weare {
+  min-height: 100vh;
+  padding: 60px 20px;
+}
+
+.weare h1 {
+  font-size: 2rem;
+}
+
+.weare h3 {
+  font-size: 1rem;
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+
+.wearCtn {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.weareImg,
+.weareText,
+.baki {
+  width: 100%;
+  max-width: 380px;
+}
+
+.weareImg {
+  height: auto;
+}
+
+.weareText {
+  position: relative;
+  padding: 24px;
+  width: 100%;
+  height: auto;
+}
+
+.weareText h4 {
+  color: #fff;
+  position: static;
+  top: auto;
+  left: auto;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.weareText ul {
+  position: static;
+  left: auto;
+  top: auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.weareText li {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.baki {
+  padding: 24px;
+  margin: 0 auto;
+}
+
+.optimisation {
+  gap: 20px;
+  width: 100%;
+}
+
+.block1,
+.block2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  height: auto;
+}
+
+.blockImage {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.blockImage img {
+  width: 48px;
+  height: 48px;
+}
+
+.blockText h1 {
+  font-size: 1rem;
+  text-align: left;
+}
+
+.blockText h4 {
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .weareImg,
+  .weareText,
+  .baki {
+    max-width: 100%;
+  }
+
+  .weareText {
+    padding: 20px;
+  }
+
+  .wearCtn {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .weare {
+    padding: 40px 16px;
+  }
+
+  .weare h1 {
+    font-size: 1.7rem;
+  }
+
+  .weare h3 {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+
+  .wearCtn {
+    gap: 16px;
+  }
+
+  .baki {
+    padding: 20px;
+  }
+
+  .blockText h1 {
+    font-size: 0.95rem;
+  }
+
+  .blockText h4 {
+    font-size: 0.85rem;
+  }
+  .weareText{
+    display: flex;
+    position: static;
+    flex-direction: column;
+    gap: 30px;
+
+  }
+}
+

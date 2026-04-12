@@ -18,7 +18,7 @@ export default function Home() {
   };
 
   const { scrollY } = useScroll();
-   const width = useTransform(scrollY, [0, 3000], ["150px", "400px"]);
+   const width = useTransform(scrollY, [1000, 5000], ["200px", "500px"]);
   const translateDn = useTransform(scrollY, [0, 3000], [0, 400]);
   const rotate = useTransform(scrollY, [0, 2000], [0, -400]);
   const translateY = useTransform(scrollY, [0, 3000], [0, -400]);
@@ -48,7 +48,12 @@ export default function Home() {
         <div className="logo">
           <img src={logo} alt="logo" />
         </div>
-
+<label className="burger" for="burger">
+  
+  <span></span>
+  <span></span>
+  <span></span>
+</label>
         <nav className="navContainer">
           <ul className="nav">
             <li>
