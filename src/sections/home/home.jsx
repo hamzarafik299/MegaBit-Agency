@@ -8,17 +8,18 @@ import abst2 from "../../assets/abstract2.png";
 import abst3 from "../../assets/abstract3.png";
 import Objet2 from "../../assets/obj1-1.png";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Home() {
-  
+  const navigate = useNavigate();
   const handleAnimationComplete = () => {
     console.log("All letters have animated!");
   };
 
   const { scrollY } = useScroll();
-   const width = useTransform(scrollY, [1000, 5000], ["200px", "500px"]);
+  const width = useTransform(scrollY, [1000, 5000], ["200px", "500px"]);
   const translateDn = useTransform(scrollY, [0, 3000], [0, 400]);
   const rotate = useTransform(scrollY, [0, 2000], [0, -400]);
   const translateY = useTransform(scrollY, [0, 3000], [0, -400]);
@@ -44,37 +45,56 @@ export default function Home() {
   return (
     <div className="home" id="home">
       {/* HEADER */}
-      <div  className={`header ${show ? "show" : "hide"}`}>
+      <div className={`header ${show ? "show" : "hide"}`}>
         <div className="logo">
           <img src={logo} alt="logo" />
         </div>
-<label className="burger" for="burger">
-  
-  <span></span>
-  <span></span>
-  <span></span>
-</label>
+        <label className="burger" for="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
         <nav className="navContainer">
           <ul className="nav">
             <li>
-              <button className="eft"><a className="eft" href="#home">HOME</a></button>
+              <button className="eft">
+                <a className="eft" href="#home">
+                  HOME
+                </a>
+              </button>
             </li>
             <li>
-              <button className="eft"><a className="eft" href="#about">ABOUT</a></button>
+              <button className="eft">
+                <a className="eft" href="#about">
+                  ABOUT
+                </a>
+              </button>
             </li>
             <li>
-              <button className="eft"><a className="eft" href="#services">SERVICES</a></button>
+              <button className="eft">
+                <a className="eft" href="#services">
+                  SERVICES
+                </a>
+              </button>
             </li>
             <li>
-              <button className="eft"><a className="eft" href="#projects">PROJETS</a></button>
+              <button className="eft">
+                <a className="eft" href="#projects">
+                  PROJETS
+                </a>
+              </button>
             </li>
             <li>
-              <button className="eft"><a className="eft" href="#contact">CONTACT</a></button>
+              <button className="eft">
+                <a className="eft" href="#contact">
+                  CONTACT
+                </a>
+              </button>
             </li>
           </ul>
         </nav>
 
-        <button className="btn">Contactez-nous</button>
+        <button onClick={() => navigate("/contact")} className="btn">Contactez-nous</button>
       </div>
 
       {/* BODY */}
@@ -104,22 +124,20 @@ export default function Home() {
           <div className="homeSecond">
             <h3>
               <BlurText
-                text="Agence digitale spécialisée en web applications et"
-                delay={200}
-                animateBy="words"
-                direction="top"
-              />
-              <BlurText
-                text="marketing pour accélérer la croissance des entreprises."
-                delay={200}
+                text="Megabit est une agence digitale spécialisée dans la création de stratégies
+performantes, de solutions créatives et de systèmes digitaux conçus pour accélérer
+la croissance des entreprises"
+                delay={100}
                 animateBy="words"
                 direction="top"
               />
             </h3>
             <motion.img src={Objet2} alt="" style={{ rotate }} />
             <div className="rightBlock">
-              <h3>Partenaires au Maroc & à l’international</h3>
-              <button className="animated-button">
+              <div className="textP">
+                <span>+50</span> <p>Projets réalisés avec succès</p>
+              </div>
+              <button className="animated-button" onClick={() => navigate("/contact")}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="arr-2"
@@ -128,7 +146,7 @@ export default function Home() {
                   <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
                 </svg>
 
-                <span className="text">Vois plus</span>
+                <span className="text">Parler à un expert</span>
 
                 <span className="circle"></span>
 
@@ -150,8 +168,7 @@ export default function Home() {
         <h1 className="btn-shine">Nos fonctionnalités</h1>
 
         <h2>
-          Des solutions puissantes pour{" "}
-          <span>développer votre business digitals</span>
+          Des solutions puissantes pour simplifier votre <span ><h2><strong>croissance digitale</strong></h2></span>
         </h2>
 
         <h3>
@@ -188,22 +205,20 @@ export default function Home() {
           </div>
         </div>
         <div className="thirdSec">
-        <div className="first-one">
-          <h1>Stratégies digitales basées sur les données</h1>
-          <motion.img src={abst2} style={{ y: translateDn }} />
-        </div>
-        <div className="second-one">
-          <motion.img src={abst1} alt="" style={{ y: translateY }} />
-          <h1>Création de contenu visuel & Animation</h1>
-          
-        </div>
-        <div className="third-one">
-          <h1> Identité de marque forte et impactante</h1>
-          <motion.img src={abst3} alt="" style={{ width }}  />
+          <div className="first-one">
+            <h1>Stratégies digitales basées sur les données</h1>
+            <motion.img src={abst2} style={{ y: translateDn }} />
+          </div>
+          <div className="second-one">
+            <motion.img src={abst1} alt="" style={{ y: translateY }} />
+            <h1>Création de contenu visuel & Animation</h1>
+          </div>
+          <div className="third-one">
+            <h1> Identité de marque forte et impactante</h1>
+            <motion.img src={abst3} alt="" style={{ width }} />
+          </div>
         </div>
       </div>
-      </div>
-      
     </div>
   );
 }

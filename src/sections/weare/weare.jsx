@@ -3,14 +3,28 @@ import bg1 from "../../assets/bg1.jpg";
 import bg5 from "../../assets/performance.png";
 import AnimatedCounter from "../../animation/counter.jsx";
 import bg6 from "../../assets/cogwheel.png";
-
+import { createObserver } from "../../animation/Observator";
+import { useEffect, useRef, useState } from "react";
 export default function WeAre() {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
 
+  useEffect(() => {
+    if (!ref.current) return;
 
+    const observer = createObserver((entry, isVisible) => {
+      setVisible(isVisible);
+    });
+
+    observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <div className="weare">
-      <h1 className="btn-shine">Who we are</h1>
-      <h3>
+      <div ref={ref} className={visible ? "weare-container show" : "weare-container"}>
+        <h1 className="btn-shine">Who we are</h1>
+      <h3 className="Sol">
         Des solutions puissantes pour développer votre
         <span>
           <strong> business digitals</strong>
@@ -63,6 +77,7 @@ export default function WeAre() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

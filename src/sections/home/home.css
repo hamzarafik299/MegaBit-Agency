@@ -70,7 +70,11 @@
   background-clip: text;
   -webkit-background-clip: text;
 }
-
+.homeSecond h3 p{
+  font-size: 15px;
+  width: 80%;
+  margin: auto 20px;
+}
 .eft:focus:after,
 .eft:hover:after {
   width: 100%;
@@ -90,7 +94,15 @@
   transition-duration: 500ms;
   transition-property: width, left;
 }
-
+.textP{
+  display: flex ;
+  align-items: center;
+  margin: 10px 30px;
+}
+.textP span{
+  font-size: 30px;
+  font-weight: bold;
+}
 .eft:focus:before,
 .eft:hover:before {
   width: 100%;
@@ -114,11 +126,15 @@ hr{
   transition-property: width, left;
   filter: blur(5px);
 }
+.eft a{
+   font-family: 'Inter', sans-serif;
+}
 .homeSecond{
     height: 40vh;
     display: flex;
     justify-content: space-between;
 }
+
 .logo {
   display: flex;
   align-items: center;
@@ -243,7 +259,7 @@ hr{
   text-align: center;
   margin: 0   150px;
   margin-top: 20px;
-  font-family: poppins, sans-serif;
+  font-weight: bold;
   letter-spacing: 5px;
 }
 .firstText{
@@ -261,8 +277,7 @@ hr{
   text-align: center;
   margin:20px 20px;
  
-  font-family: poppins, sans-serif;
-  width: 60%;
+font-family: 'Montserrat', sans-serif;  width: 60%;
 }
 .body{
 display: flex;
@@ -277,6 +292,10 @@ flex-direction: column;
   font-size: 30px;
   line-height: 1,5;
   letter-spacing: 2px;
+}
+.crois  h2 {
+  color : #663399;
+
 }
 .secondText img {
   width: 350px;
@@ -322,12 +341,20 @@ background-color: #0000002d;   color: white;
   margin-bottom: 20px;
   color: #CAA8F5;
 }
+.secondSlide h2 span{
+  color: #663399;
 
-/* Highlight */
-.secondSlide h1 span {
- 
-color: #9984D4;
 }
+.secondSlide strong{
+  font-size: 1.8rem;
+  padding-top:10px ;
+  padding-bottom: 10px;
+}
+.secondSlide h2{
+  font-size: 1.5rem;
+}
+/* Highlight */
+
 
 /* Subtitle */
 .secondSlide h3 {
@@ -548,6 +575,10 @@ color: #9984D4;
   align-items: center;
   gap: 20px;
 }
+.rightBlock h3 span{
+  font-size: 50px;
+  margin: auto ;
+}
 .elemnts {
     display: flex;
     margin: 20px;
@@ -730,11 +761,17 @@ padding: 10px 0;
   }
 
   .animated-button {
-    width: 100%;
+    width: 55%;
     justify-content: center;
     padding: 14px 24px;
   }
-
+  .homeSecond h3 p{
+  font-size: 11px;
+  
+}
+hr{
+  width: 60%;
+}
   .thirdSec {
     flex-direction: column;
     gap: 20px;
@@ -854,8 +891,8 @@ padding: 10px 0;
   }
 
   .logo img {
-    width: 130px;
-    margin-bottom: 10px;
+            margin: 1px -28px;
+        width: 130px;
   }
 
   .text h1 {

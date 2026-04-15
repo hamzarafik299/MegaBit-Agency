@@ -1,23 +1,40 @@
-.nous{
-    height: 100vh;
-    background-color: #2c184147;    
-    width: 100%; 
-    box-sizing: border-box; 
+.nous {
+  height: 100vh;
+  background-color: #2c184147;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.nous h1{
-    font-family: poppins, sans-serif;
-    font-weight: bold;
-    font-size: 50px;text-align: center;
-    justify-self: center;
+.nous h1 {
+  font-family: poppins, sans-serif;
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+  justify-self: center;
+}
+.nousH {
+  text-align: center;
+}
+.nous-container {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.nous-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.nousH span {
+  color: #663399;
 }
 .nousHeader {
-   opacity: 0;
-    transition: all 1s ease;
+  opacity: 0;
+  transition: all 1s ease;
 }
-.nousHeader.show{
-    opacity: 1;
-    transform: translateY(0);
+.nousHeader.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 .grid {
   display: grid;
@@ -31,7 +48,7 @@
 }
 
 .Ncard {
-  background: rgba(255, 255, 255, 0.205);
+  background: rgb(255 255 255 / 13%);
   border-radius: 12px;
   padding: 20px;
   margin: 10px auto;
@@ -46,17 +63,35 @@
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box; /* Include padding in width calculation */
+  position: relative;
+  transform: scale(0.9);
+  transition: all 0.6s ease;
+}
+.Ncard:hover {
+  transform: scale(1);
 }
 .Ncard h4 {
   font-family: poppins, sans-serif;
-  font-weight: bold;
-  font-size: 24px;
+  font-weight: 800;
+  font-size: 1.8rem;
   margin-bottom: 10px;
-  color: #663399;
+
+  color: #130c1a;
+}
+.Ncard h1 {
+  position: absolute;
+  background: linear-gradient(to bottom, #663399, black);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.3;
+  font-size: 7rem;
+  /* color: #663399; */
+  top: -9%;
+  left: 50%;
 }
 .Ncard p {
   font-family: poppins, sans-serif;
-  color: #ffffff75;
+  color: #caa8f5;
   font-size: 16px;
 }
 @media (max-width: 600px) {
@@ -65,9 +100,18 @@
     padding: 10px;
     margin: 30px auto;
   }
+  .Ncard h1 {
+    top: 11%;
+    left: 56%;
+    font-size: 7rem;
+  }
   .Ncard {
     width: 100%;
     max-width: none;
+  }
+
+  .nous {
+    height: 154vh;
   }
 }
 
