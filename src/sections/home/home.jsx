@@ -86,7 +86,7 @@ export default function Home() {
             </li>
             <li>
               <button className="eft">
-                <a className="eft" href="#contact">
+                <a onClick={() => navigate("/contact")}  className="eft" >
                   CONTACT
                 </a>
               </button>
