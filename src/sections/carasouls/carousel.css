@@ -1,0 +1,57 @@
+.carousel-card-image {
+  object-fit: cover;
+}
+
+@media (max-width: 768px), (max-device-width: 768px), (hover: none) and (pointer: coarse) and (max-width: 1024px) {
+  .carousel-shell {
+    height: auto !important;
+    padding: 1rem 0 1.5rem !important;
+  }
+
+  .carousel-track {
+    height: 26rem !important;
+  }
+
+  .carousel-card-slot.is-left,
+  .carousel-card-slot.is-right,
+  .carousel-card-slot.is-hidden {
+    pointer-events: none;
+  }
+
+  .carousel-card-slot.is-left .carousel-card,
+  .carousel-card-slot.is-right .carousel-card,
+  .carousel-card-slot.is-hidden .carousel-card {
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  .carousel-card {
+    width: min(100%, 20rem) !important;
+    height: auto !important;
+    min-height: 24rem;
+    border-radius: 8px !important;
+  }
+
+  .carousel-card-image {
+    height: 12rem !important;
+  }
+
+  .carousel-card-body {
+    padding: 1rem !important;
+  }
+
+  .carousel-card-title {
+    font-size: 1rem !important;
+  }
+
+  .carousel-card-description {
+    font-size: 0.875rem !important;
+  }
+
+  .carousel-controls-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem !important;
+    margin-top: 1rem !important;
+  }
+}

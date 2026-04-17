@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import CarouselCard from "./CarouselCard";
 import CarouselDots from "./CarouselDots";
 import CarouselControls from "./CarouselControls";
+import "./carousel.css";
 
 const CARDS = [
   {
@@ -59,6 +60,7 @@ const Carousel = ({ cards = CARDS }) => {
 
   return (
     <div
+      className="carousel-shell"
       style={{
         display: "flex",
         flexDirection: "column",
@@ -72,6 +74,7 @@ const Carousel = ({ cards = CARDS }) => {
     >
       {/* Track — full width, clipped so side cards peek but don't overflow */}
       <div
+        className="carousel-track"
         style={{
           position: "relative",
           width: "100%",
@@ -82,6 +85,7 @@ const Carousel = ({ cards = CARDS }) => {
         {cards.map((card, i) => (
           <div
             key={i}
+            className={`carousel-card-slot is-${positions[i]}`}
             onClick={() => positions[i] !== "center" && goTo(i)}
             style={{ position: "absolute", inset: 0 }}
           >
@@ -92,6 +96,7 @@ const Carousel = ({ cards = CARDS }) => {
 
       {/* Controls row */}
       <div
+        className="carousel-controls-row"
         style={{
           display: "flex",
           alignItems: "center",

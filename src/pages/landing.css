@@ -39,9 +39,14 @@ body {
   transition: transform 0.15s ease-out;
 }
 
-@media (max-width: 600px), (pointer: coarse) {
+@media (max-width: 768px), (max-device-width: 768px), (hover: none) and (pointer: coarse) {
+  body,
+  * {
+    cursor: auto !important;
+  }
+
   .cursor-dot,
   .cursor-ring {
-    display: none;
+    display: none !important;
   }
 }

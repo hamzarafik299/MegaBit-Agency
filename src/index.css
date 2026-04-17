@@ -75,3 +75,20 @@ p {
   margin: 0;
   overflow-wrap: break-word;
 }
+
+@media (max-width: 768px), (max-device-width: 768px), (hover: none) and (pointer: coarse) and (max-width: 1024px) {
+  html,
+  body,
+  #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  img,
+  svg,
+  video,
+  canvas {
+    max-width: 100%;
+  }
+}

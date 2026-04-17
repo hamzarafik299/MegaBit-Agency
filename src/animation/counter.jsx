@@ -7,6 +7,7 @@ function AnimatedCounter({ target = 50, duration = 2000 }) {
   const [started, setStarted] = useState(false);
 
   useEffect(() => {
+    const node = ref.current;
     const observer = createObserver(() => {
       if (!started) {
         setStarted(true); // make sure it only triggers once
@@ -21,10 +22,10 @@ function AnimatedCounter({ target = 50, duration = 2000 }) {
       }
     });
 
-    if (ref.current) observer.observe(ref.current);
+    if (node) observer.observe(node);
 
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      if (node) observer.unobserve(node);
     };
   }, [started, target, duration]);
 

@@ -38,6 +38,7 @@ const CarouselCard = ({ card, position }) => {
 
   return (
     <div
+      className={`carousel-card carousel-card-${position}`}
       style={{
         position: "absolute",
         width: "50%",
@@ -54,12 +55,14 @@ const CarouselCard = ({ card, position }) => {
       }}
     >
       <img
+        className="carousel-card-image"
         src={card.img}
         alt={card.title}
         style={{ width: "100%", height: 240,  display: "block" }}
       />
-      <div style={{ padding: "20px 24px 18px" }}>
+      <div className="carousel-card-body" style={{ padding: "20px 24px 18px" }}>
         <p
+          className="carousel-card-title"
           style={{
             margin: "0 0 8px",
             fontSize: 20,
@@ -70,6 +73,7 @@ const CarouselCard = ({ card, position }) => {
           {card.title}
         </p>
         <p
+          className="carousel-card-description"
           style={{
             margin: 0,
             fontSize: 14,

@@ -12,6 +12,8 @@ import { useNavigate } from "react-router-dom";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
+const MotionImg = motion.img;
+
 export default function Home() {
   const navigate = useNavigate();
   const handleAnimationComplete = () => {
@@ -132,7 +134,12 @@ la croissance des entreprises"
                 direction="top"
               />
             </h3>
-            <motion.img src={Objet2} alt="" style={{ rotate }} />
+            <MotionImg
+              className="desktop-only-media"
+              src={Objet2}
+              alt=""
+              style={{ rotate }}
+            />
             <div className="rightBlock">
               <div className="textP">
                 <span>+50</span> <p>Projets réalisés avec succès</p>
@@ -181,7 +188,12 @@ la croissance des entreprises"
             <h1>UI/UX Design</h1>
             <h3>Sassly-CRM in the past allowing you to</h3>
 
-            <motion.img src={Object} alt="" style={{ rotate }} />
+            <MotionImg
+              className="desktop-only-media"
+              src={Object}
+              alt=""
+              style={{ rotate }}
+            />
           </div>
 
           <div className="rightCnt">
@@ -199,23 +211,38 @@ la croissance des entreprises"
               <h6 className="branding">Branding</h6>
             </div>
 
-            <div className="containerImg">
-              <motion.img src={fea} alt="" style={{ y: translateY }} />
+            <div className="containerImg desktop-only-media">
+              <MotionImg src={fea} alt="" style={{ y: translateY }} />
             </div>
           </div>
         </div>
         <div className="thirdSec">
           <div className="first-one">
             <h1>Stratégies digitales basées sur les données</h1>
-            <motion.img src={abst2} style={{ y: translateDn }} />
+            <MotionImg
+              className="desktop-only-media"
+              src={abst2}
+              alt=""
+              style={{ y: translateDn }}
+            />
           </div>
           <div className="second-one">
-            <motion.img src={abst1} alt="" style={{ y: translateY }} />
+            <MotionImg
+              className="desktop-only-media"
+              src={abst1}
+              alt=""
+              style={{ y: translateY }}
+            />
             <h1>Création de contenu visuel & Animation</h1>
           </div>
           <div className="third-one">
             <h1> Identité de marque forte et impactante</h1>
-            <motion.img src={abst3} alt="" style={{ width }} />
+            <MotionImg
+              className="desktop-only-media"
+              src={abst3}
+              alt=""
+              style={{ width }}
+            />
           </div>
         </div>
       </div>
