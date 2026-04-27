@@ -181,9 +181,37 @@
 }
 
 @media (max-width: 600px) {
+  .weare {
+    min-height: auto;
+    padding: 2.25rem 1rem;
+  }
+
+  .weare h1 {
+    font-size: 1.5rem;
+  }
+
+  .weare h3 {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .wearCtn {
+    grid-template-columns: 1fr;
+  }
+
   .weareImg,
   .weareText,
   .baki {
     min-height: auto;
+    border-radius: 8px;
+  }
+
+  .weareImg {
+    min-height: 14rem;
+  }
+
+  .block1,
+  .block2 {
+    align-items: flex-start;
   }
 }

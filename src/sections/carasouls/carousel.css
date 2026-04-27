@@ -27,6 +27,7 @@
 
   .carousel-card {
     width: min(100%, 20rem) !important;
+    max-width: calc(100vw - 2rem);
     height: auto !important;
     min-height: 24rem;
     border-radius: 8px !important;
@@ -46,6 +47,7 @@
 
   .carousel-card-description {
     font-size: 0.875rem !important;
+    text-align: left;
   }
 
   .carousel-controls-row {

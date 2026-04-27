@@ -51,11 +51,11 @@ export default function Home() {
         <div className="logo">
           <img src={logo} alt="logo" />
         </div>
-        <label className="burger" for="burger">
+        <button className="burger" type="button" aria-label="Open navigation menu">
           <span></span>
           <span></span>
           <span></span>
-        </label>
+        </button>
         <nav className="navContainer">
           <ul className="nav">
             <li>
@@ -79,13 +79,7 @@ export default function Home() {
                 </a>
               </button>
             </li>
-            <li>
-              <button className="eft">
-                <a className="eft" href="#projects">
-                  PROJETS
-                </a>
-              </button>
-            </li>
+            
             <li>
               <button className="eft">
                 <a onClick={() => navigate("/contact")}  className="eft" >
@@ -175,7 +169,7 @@ la croissance des entreprises"
         <h1 className="btn-shine">Nos fonctionnalités</h1>
 
         <h2>
-          Des solutions puissantes pour simplifier votre <span ><h2><strong>croissance digitale</strong></h2></span>
+          Des solutions puissantes pour simplifier votre <span><strong>croissance digitale</strong></span>
         </h2>
 
         <h3>

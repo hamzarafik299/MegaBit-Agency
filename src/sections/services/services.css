@@ -97,10 +97,26 @@
 
 @media (max-width: 600px) {
   .services {
-    padding-inline: 1rem;
+    min-height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .services-container {
+    padding: 0;
+    overflow: visible;
   }
 
   .servicesHeader {
     min-height: 5rem;
+  }
+
+  .servicesHeader h1,
+  .servicesDes h3 {
+    font-size: 1.5rem;
+  }
+
+  .servicesDes {
+    padding-inline: 0;
+    font-size: 1rem;
   }
 }

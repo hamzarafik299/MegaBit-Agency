@@ -1,9 +1,43 @@
-import "./Nous.css";
-import { createObserver } from "../../animation/Observator";
 import { useEffect, useRef, useState } from "react";
+import { createObserver } from "../../animation/Observator";
+import blog1 from "../../assets/blog1.jpg";
+import blog2 from "../../assets/blog2.jpg";
+import blog3 from "../../assets/blog3.jpg";
+import "./Nous.css";
+
+const images = [blog1, blog2, blog3];
+
+const reasons = [
+  {
+    number: "01",
+    title: "Approche sur mesure",
+    description:
+      "Chaque projet est adapt\u00E9 \u00E0 vos besoins pour garantir des r\u00E9sultats efficaces et durables.",
+  },
+  {
+    number: "02",
+    title: "\u00C9quipe exp\u00E9riment\u00E9e",
+    description:
+      "Une \u00E9quipe qualifi\u00E9e qui ma\u00EEtrise les outils et les strat\u00E9gies digitales modernes.",
+  },
+  {
+    number: "03",
+    title: "D\u00E9cisions bas\u00E9es sur la data",
+    description:
+      "Nous analysons les donn\u00E9es pour optimiser vos performances et maximiser votre retour.",
+  },
+  {
+    number: "04",
+    title: "Accompagnement continu",
+    description:
+      "Nous vous accompagnons \u00E0 chaque \u00E9tape pour assurer la r\u00E9ussite de votre projet.",
+  },
+];
+
 export default function Nous() {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
+  const loopedImages = [...images, ...images];
 
   useEffect(() => {
     if (!ref.current) return;
@@ -16,44 +50,36 @@ export default function Nous() {
 
     return () => observer.disconnect();
   }, []);
+
   return (
     <div className="nous">
-      <div ref={ref} className={visible ? "nous-container show" : "nous-container"}>
+      <div
+        ref={ref}
+        className={visible ? "nous-container show" : "nous-container"}
+      >
         <h1 className="btn-shine">Pourquoi nous</h1>
-        <h2 className="nousH">Pourquoi les entreprises font confiance à notre <span>expertise</span></h2>
+        <h2 className="nousH">
+          {"Pourquoi les entreprises font confiance \u00E0 notre "}
+          <span>expertise</span>
+        </h2>
 
-        <div className="grid">
-          <div className="Ncard">
-            <h1>01</h1>
-            <h4>Approche sur mesure</h4>
-            <p>
-              Chaque projet est adapté à vos besoins pour garantir des résultats
-              efficaces et durables.
-            </p>
+        <div className="nous body">
+          <div className="scroll-box">
+            <div className="scroll-track">
+              {loopedImages.map((src, index) => (
+                <img key={`${src}-${index}`} src={src} alt={`img-${index}`} />
+              ))}
+            </div>
           </div>
-          <div className="Ncard">
-            <h1>02</h1>
-            <h4>Équipe expérimentée</h4>
-            <p>
-              Une équipe qualifiée qui maîtrise les outils et les stratégies
-              digitales modernes.
-            </p>
-          </div>
-          <div className="Ncard">
-            <h1>03</h1>
-            <h4> Décisions basées sur la data</h4>
-            <p>
-              Nous analysons les données pour optimiser vos performances et
-              maximiser votre retour.
-            </p>
-          </div>
-          <div className="Ncard">
-            <h1>04</h1>
-            <h4>Accompagnement continu </h4>
-            <p>
-              Nous vous accompagnons à chaque étape pour assurer la réussite de
-              votre projet.
-            </p>
+
+          <div className="grid">
+            {reasons.map((reason) => (
+              <div key={reason.number} className="Ncard">
+                <h1>{reason.number}</h1>
+                <h4>{reason.title}</h4>
+                <p>{reason.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
