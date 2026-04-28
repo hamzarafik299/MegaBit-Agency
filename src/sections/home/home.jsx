@@ -79,6 +79,13 @@ export default function Home() {
                 </a>
               </button>
             </li>
+            <li>
+              <button className="eft">
+                <a className="eft" href="#faqs">
+                  FAQS
+                </a>
+              </button>
+            </li>
             
             <li>
               <button className="eft">
