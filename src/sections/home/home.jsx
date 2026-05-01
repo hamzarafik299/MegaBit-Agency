@@ -19,7 +19,7 @@ export default function Home() {
   const handleAnimationComplete = () => {
     console.log("All letters have animated!");
   };
-
+  const [active, setActive] = useState(false);
   const { scrollY } = useScroll();
   const width = useTransform(scrollY, [1000, 5000], ["200px", "500px"]);
   const translateDn = useTransform(scrollY, [0, 3000], [0, 400]);
@@ -47,15 +47,51 @@ export default function Home() {
   return (
     <div className="home" id="home">
       {/* HEADER */}
+      <div className={active && show ? "menu active" : "menu"}>
+        <ul className="">
+          <li>
+            <a className="" href="#home">
+              HOME
+            </a>
+          </li>
+          <li>
+            <a className="" href="#about">
+              ABOUT
+            </a>
+          </li>
+          <li>
+            <a className="" href="#services">
+              SERVICES
+            </a>
+          </li>
+          <li>
+            <a className="" href="#faqs">
+              FAQS
+            </a>
+          </li>
+
+          <li>
+            <a onClick={() => navigate("/contact")} className="">
+              CONTACT
+            </a>
+          </li>
+        </ul>
+      </div>
       <div className={`header ${show ? "show" : "hide"}`}>
         <div className="logo">
           <img src={logo} alt="logo" />
         </div>
-        <button className="burger" type="button" aria-label="Open navigation menu">
+        <label className="burger" htmlFor="burger">
+          <input
+            type="checkbox"
+            id="burger"
+            checked={active}
+            onChange={(e) => setActive(e.target.checked)}
+          />
           <span></span>
           <span></span>
           <span></span>
-        </button>
+        </label>
         <nav className="navContainer">
           <ul className="nav">
             <li>
@@ -86,10 +122,10 @@ export default function Home() {
                 </a>
               </button>
             </li>
-            
+
             <li>
               <button className="eft">
-                <a onClick={() => navigate("/contact")}  className="eft" >
+                <a onClick={() => navigate("/contact")} className="eft">
                   CONTACT
                 </a>
               </button>
@@ -97,7 +133,9 @@ export default function Home() {
           </ul>
         </nav>
 
-        <button onClick={() => navigate("/contact")} className="btn">Contactez-nous</button>
+        <button onClick={() => navigate("/contact")} className="btn">
+          Contactez-nous
+        </button>
       </div>
 
       {/* BODY */}
@@ -106,7 +144,7 @@ export default function Home() {
           <div className="firstText">
             <h1>
               <BlurText
-                text="MEGABIT"
+                text="MEGABYTE"
                 delay={200}
                 animateBy="words"
                 direction="top"
@@ -145,7 +183,10 @@ la croissance des entreprises"
               <div className="textP">
                 <span>+50</span> <p>Projets réalisés avec succès</p>
               </div>
-              <button className="animated-button" onClick={() => navigate("/contact")}>
+              <button
+                className="animated-button"
+                onClick={() => navigate("/contact")}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="arr-2"
@@ -176,7 +217,10 @@ la croissance des entreprises"
         <h1 className="btn-shine">Nos fonctionnalités</h1>
 
         <h2>
-          Des solutions puissantes pour simplifier votre <span><strong>croissance digitale</strong></span>
+          Des solutions puissantes pour simplifier votre{" "}
+          <span>
+            <strong>croissance digitale</strong>
+          </span>
         </h2>
 
         <h3>

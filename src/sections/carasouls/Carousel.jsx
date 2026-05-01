@@ -6,27 +6,27 @@ import "./carousel.css";
 
 const CARDS = [
   {
-    title: "Web Design & Development",
-    desc: "We create modern, fast, and conversion-focused websites tailored to your business needs.",
+    title: "Création de Sites Web Professionnels",
+    desc: "Nous concevons des sites web modernes, rapides et entièrement adaptés à tous les appareils avec optimisation SEO",
     img: "https://i.pinimg.com/736x/60/9e/aa/609eaa4321ab5ba8f0b7a9828192873c.jpg",
     bg: "#9984d4",
   },
   {
-    title: "Digital Marketing",
-    desc: "Grow your business with targeted strategies, ads, and campaigns that bring real results.",
-    img: "https://i.pinimg.com/1200x/69/6d/ca/696dca0baf60b68bd4d023dee0d38d57.jpg",
+    title: "Gestion des Réseaux Sociaux & Création de Contenu Professionnel",
+    desc: "Développement de leur présence sur les réseaux sociaux grâce à une gestion complète et stratégique",
+    img: "https://i.pinimg.com/736x/eb/75/b1/eb75b12bf1160d6d6c27fdd9d6231e5b.jpg",
     bg: "#9984d4",
   },
   {
-    title: "Brand Identity Design",
-    desc: "We build strong and memorable brand identities that make you stand out in your market.",
-    img: "https://dev261.kodesolution.com/degency/wp-content/uploads/2026/03/services6-672x448.jpg",
+    title: "Création de Branding Stratégique & Identité Visuelle",
+    desc: "Nous aidons votre marque à se démarquer grâce à une identité visuelle forte et une stratégie claire.",
+    img: "https://i.pinimg.com/1200x/15/21/c7/1521c7781296d344caf0426669695a5d.jpg",
     bg: "#9984d4",
   },
   {
-    title: "Brand Identity Design",
-    desc: "Creative Branding Build a unique identity that captures attention and leaves a lasting impression on your audience.",
-    img: "https://dev261.kodesolution.com/degency/wp-content/uploads/2026/02/bg-news2-672x448.jpg",
+    title: "Solutions Digitales Intelligentes pour Automatiser Votre Business",
+    desc: "Développant des systèmes intelligents et des solutions SaaS sur mesure, adaptés à leurs besoins spécifiques.",
+    img: "https://i.pinimg.com/1200x/c3/78/54/c378541fa946d2cc4b4a449d38be8263.jpg",
     bg: "#9984d4",
   },
 ];
@@ -78,7 +78,7 @@ const Carousel = ({ cards = CARDS }) => {
         style={{
           position: "relative",
           width: "100%",
-          height: 420,
+          height: 520,
           overflow: "hidden",
         }}
       >

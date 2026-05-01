@@ -1,6 +1,8 @@
 import "./contacts.css";
 import Cursor from "../../animation/cusor.jsx";
+import logo from "../../assets/logo.png";
 import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
@@ -30,8 +32,15 @@ export default function Contact() {
   };
 
   return (
+     <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      transition={{ duration: 0.5 }}
+    >
     <div className="contacts" id="contacts">
       <div className="contactHeader">
+        <img src={logo} alt="Logo" />
         <h1>Contact Us</h1>
       </div>
 
@@ -75,5 +84,6 @@ export default function Contact() {
 
       <Cursor />
     </div>
+    </motion.div>
   );
 }

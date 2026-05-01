@@ -8,12 +8,27 @@
   padding: clamp(1.5rem, 5vw, 2.5rem) 1rem;
   overflow-x: hidden;
 }
-
+.contactHeader img {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.19;
+    top: 4%;
+    left: 5%;
+    overflow: hidden;
+    width: 391px;
+    transition: all 1s ease;
+    /* border-radius: 118px; */
+    /* border: solid 5px #000; */
+}
+.contactHeader img:hover{
+  opacity: 0.4;
+}
 .contactHeader h1 {
   margin: 0 0 1.875rem;
   font-family: "Inter", sans-serif;
   font-size: clamp(2rem, 7vw, 3rem);
   text-align: center;
+ 
 }
 
 .form-container {
@@ -30,6 +45,7 @@
     linear-gradient(145deg, transparent 35%, var(--main-color), var(--accent-dark)) border-box;
   font-family: inherit;
   font-size: 0.875rem;
+  
 }
 
 .form-container button:active {

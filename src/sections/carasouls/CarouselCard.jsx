@@ -60,12 +60,12 @@ const CarouselCard = ({ card, position }) => {
         alt={card.title}
         style={{ width: "100%", height: 240,  display: "block" }}
       />
-      <div className="carousel-card-body" style={{ padding: "20px 24px 18px" }}>
+      <div className="carousel-card-body" style={{ padding: "10px 14px 18px" }}>
         <p
           className="carousel-card-title"
           style={{
             margin: "0 0 8px",
-            fontSize: 20,
+            fontSize: 17,
             fontWeight: 600,
             color: isDark ? "#CAA8F5" : "#26215C",
           }}
@@ -76,7 +76,7 @@ const CarouselCard = ({ card, position }) => {
           className="carousel-card-description"
           style={{
             margin: 0,
-            fontSize: 14,
+            fontSize: 13,
             lineHeight: 1.6,
             color: isDark ? "#b89ee0" : "#3C3489",
           }}

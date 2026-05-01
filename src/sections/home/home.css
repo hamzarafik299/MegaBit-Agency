@@ -7,7 +7,29 @@
   background-size: cover;
 
 }
+.menu {
+  position: fixed;
+    max-height: 42vh;
+    top: 13%;
+    z-index: 400;
+    background: #230c33f5;
+    width: 100%;
+    left: 0%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    line-height: 47px;
+    font-size: 24px;
+    font-weight: 500;
+    transition: all 0.8s ease;
+    transform: translateY(-144%);
+    opacity: 0;
+}
+.menu.active{
+    transform: translateY(-16%);
 
+  opacity: 1;
+}
 .body {
   width: 100%;
   min-height: 100dvh;
@@ -42,8 +64,8 @@
 }
 
 .logo img {
-  width: clamp(8rem, 14vw, 10.625rem);
-  margin: 0;
+  width: clamp(2rem, 6vw, 14rem);
+  margin: 10px;
   opacity: 0.65;
 }
 
@@ -179,11 +201,12 @@
 
 .burger {
   position: relative;
-  display: none;
   width: 40px;
   height: 30px;
-  flex: 0 0 auto;
   background: transparent;
+  cursor: pointer;
+  display: block;
+  display: none;
 }
 
 .burger input {
@@ -191,20 +214,21 @@
 }
 
 .burger span {
-  position: absolute;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 4px;
-  border-radius: 9px;
-  background: rgb(250, 214, 214);
-  opacity: 1;
-  transform: rotate(0deg);
-  transition: 0.25s ease-in-out;
+     display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #2c1841;
+    border-radius: 9px;
+    opacity: 1;
+    box-shadow: 1px 1px 1px #592e83;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
 }
 
 .burger span:nth-of-type(1) {
-  top: 0;
+  top: 0px;
   transform-origin: left center;
 }
 
@@ -216,9 +240,28 @@
 
 .burger span:nth-of-type(3) {
   top: 100%;
-  transform: translateY(-100%);
   transform-origin: left center;
+  transform: translateY(-100%);
 }
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+
+
 
 .body > .text {
   width: 100%;
@@ -239,7 +282,7 @@
 .body > .text h1 {
   width: 100%;
   max-width: min(100%, 12ch);
-  margin: 0 auto;
+  margin: 30px auto;
   color: #ffffff97;
   font-size: clamp(2.5rem, 12vw, 7.5rem);
   font-weight: 800;
@@ -303,7 +346,7 @@ hr {
 
 .rightBlock {
   flex: 1 1 14rem;
-  max-width: 20rem;
+  max-width: 24rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -552,6 +595,9 @@ hr {
 .containerImg img {
   width: min(100%, 28rem);
   will-change: transform;
+  position:absolute;
+  top: 40%;
+  left: 1%;
 }
 
 .elemnts {
@@ -641,6 +687,14 @@ hr {
     height: auto;
     min-height: 72px;
   }
+  .burger{
+    display: block;
+  }
+  .menu{
+    top: 19%;
+    display: flex;
+    
+  }
   .containerImg img{
     display: none;
   }
@@ -655,6 +709,7 @@ hr {
 
   .body > .text {
     padding-top: 6rem;
+    margin: 30px 0;
   }
 
   .homeSecond {
@@ -677,12 +732,15 @@ hr {
 
 @media (max-width: 768px), (max-device-width: 768px), (hover: none) and (pointer: coarse) and (max-width: 1024px) {
   .header {
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     padding: max(0.75rem, env(safe-area-inset-top)) 1rem 0.75rem;
   }
   .navContainer{
     display: none;
+  }
+  .menu{
+    top: 13%;
   }
 
   .body {
@@ -691,7 +749,8 @@ hr {
   }
 
   .body > .text {
-    padding: 4.75rem 1rem 2.5rem;
+    padding: 0.75rem 1rem 2.5rem;
+    margin: 100px 0;
   }
 
   .body > .text h1 {
@@ -706,7 +765,7 @@ hr {
   }
 
   hr {
-    width: min(100%, 22rem);
+    display: none;
   }
 
   .homeSecond {
@@ -716,9 +775,12 @@ hr {
   }
 
   .homeSecond h3 {
-    font-size: 1rem;
-    line-height: 1.55;
-    text-align: left;
+        font-size: 0.7rem;
+        line-height: 1.55;
+        padding: 50px 4px;
+        text-align: center;
+        letter-spacing: 1.2px;
+        padding-left: 17px;
   }
 
   .homeSecond h3 p {
@@ -750,7 +812,7 @@ hr {
 
   .secondSlide h3 {
     font-size: 1rem;
-    text-align: left;
+    text-align: center;
   }
 
   .rightCnt,
@@ -796,11 +858,11 @@ hr {
 
 @media (max-width: 380px) {
   .body > .text h1 {
-    font-size: 2.45rem;
+    font-size: 3.4rem;
   }
 
   .animated-button {
-    width: 100%;
+    width: 60%;
     white-space: normal;
   }
 }
