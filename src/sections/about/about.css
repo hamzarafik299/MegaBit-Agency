@@ -1,0 +1,8 @@
+.about{
+      margin-top: 100px;
+   background: 
+    linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.5)),
+    url("https://i.pinimg.com/1200x/87/9f/bb/879fbbbcf60cc04d0a76b37ffa6bd48e.jpg");
+    background-size: cover;
+    background-position: center;
+}

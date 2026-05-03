@@ -1,14 +1,17 @@
 import "./home.css";
-import logo from "../../assets/logo.png";
 import BlurText from "../../animation/BlurText";
+import Header from "../../animation/header";
 import Object from "../../assets/Object.png";
 import fea from "../../assets/fea.png";
 import abst1 from "../../assets/abstract1.png";
 import abst2 from "../../assets/abstract2.png";
 import abst3 from "../../assets/abstract3.png";
 import Objet2 from "../../assets/obj1-1.png";
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import home1 from "../../assets/home1.jpg";
+import home2 from "../../assets/home2.jpg";
+
+
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -19,129 +22,24 @@ export default function Home() {
   const handleAnimationComplete = () => {
     console.log("All letters have animated!");
   };
-  const [active, setActive] = useState(false);
   const { scrollY } = useScroll();
   const width = useTransform(scrollY, [1000, 5000], ["200px", "500px"]);
   const translateDn = useTransform(scrollY, [0, 3000], [0, 400]);
   const rotate = useTransform(scrollY, [0, 2000], [0, -400]);
   const translateY = useTransform(scrollY, [0, 3000], [0, -400]);
-  const [show, setShow] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        // scrolling down
-        setShow(false);
-      } else {
-        // scrolling up
-        setShow(true);
-      }
-      setLastScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
   return (
     <div className="home" id="home">
       {/* HEADER */}
-      <div className={active && show ? "menu active" : "menu"}>
-        <ul className="">
-          <li>
-            <a className="" href="#home">
-              HOME
-            </a>
-          </li>
-          <li>
-            <a className="" href="#about">
-              ABOUT
-            </a>
-          </li>
-          <li>
-            <a className="" href="#services">
-              SERVICES
-            </a>
-          </li>
-          <li>
-            <a className="" href="#faqs">
-              FAQS
-            </a>
-          </li>
-
-          <li>
-            <a onClick={() => navigate("/contact")} className="">
-              CONTACT
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div className={`header ${show ? "show" : "hide"}`}>
-        <div className="logo">
-          <img src={logo} alt="logo" />
-        </div>
-        <label className="burger" htmlFor="burger">
-          <input
-            type="checkbox"
-            id="burger"
-            checked={active}
-            onChange={(e) => setActive(e.target.checked)}
-          />
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-        <nav className="navContainer">
-          <ul className="nav">
-            <li>
-              <button className="eft">
-                <a className="eft" href="#home">
-                  HOME
-                </a>
-              </button>
-            </li>
-            <li>
-              <button className="eft">
-                <a className="eft" href="#about">
-                  ABOUT
-                </a>
-              </button>
-            </li>
-            <li>
-              <button className="eft">
-                <a className="eft" href="#services">
-                  SERVICES
-                </a>
-              </button>
-            </li>
-            <li>
-              <button className="eft">
-                <a className="eft" href="#faqs">
-                  FAQS
-                </a>
-              </button>
-            </li>
-
-            <li>
-              <button className="eft">
-                <a onClick={() => navigate("/contact")} className="eft">
-                  CONTACT
-                </a>
-              </button>
-            </li>
-          </ul>
-        </nav>
-
-        <button onClick={() => navigate("/contact")} className="btn">
-          Contactez-nous
-        </button>
-      </div>
+      <Header />
 
       {/* BODY */}
       <div className="body">
         <div className="text">
           <div className="firstText">
+            <img src={home1} alt="Home 1" />
+            <img src={home2} alt="Home 2" />
+
             <h1>
               <BlurText
                 text="MEGABYTE"

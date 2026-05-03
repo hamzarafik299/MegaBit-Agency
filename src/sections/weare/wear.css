@@ -39,7 +39,7 @@
 }
 
 .weare span {
-  color: #9984d4;
+  color: var(--palette-third);
 }
 
 .wearCtn {
@@ -115,7 +115,7 @@
 .weareText li::before {
   content: "*";
   flex: 0 0 auto;
-  color: #9984d4;
+  color: var(--palette-third);
   font-size: 1.1em;
 }
 

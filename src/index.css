@@ -2,6 +2,10 @@
   --main-color: #caa8f5;
   --accent-dark: #663399;
   --page-bg: #04040b;
+  --palette-main: #230c33;
+  --second-color: #592e83;
+  --third-color: #9984d4;
+  --fourth-color: #caa8f5;
   color: #ffffff;
   background: var(--page-bg);
   font-family: "Work Sans", "Inter", "Montserrat", system-ui, sans-serif;

@@ -5,56 +5,46 @@ import Carousel from "../carasouls/Carousel.jsx";
 
 export default function Services() {
   const headerRef = useRef(null);
-  const footerRef = useRef(null);
-
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const observer = createObserver((entry, isVisible) => {
-      setIsVisible(isVisible);
+    const observer = createObserver((entry, visible) => {
+      setIsVisible(visible);
     });
 
-    const elements = [headerRef.current, footerRef.current].filter(Boolean);
-
-    elements.forEach((el) => observer.observe(el));
+    const elements = [headerRef.current].filter(Boolean);
+    elements.forEach((element) => observer.observe(element));
 
     return () => {
-      elements.forEach((el) => observer.unobserve(el));
+      elements.forEach((element) => observer.unobserve(element));
     };
   }, []);
 
   return (
-    <div className="services" id="services">
-      <div className={isVisible ? "services-container show" : "services-container"}>
-
-        {/* HEADER */}
+    <section className="landing-services" id="services">
+      <div
+        className={
+          isVisible
+            ? "landing-services__container show"
+            : "landing-services__container"
+        }
+      >
         <div
           ref={headerRef}
-          className={isVisible ? "servicesHeader show" : "servicesHeader"}
+          className={
+            isVisible
+              ? "landing-services__header show"
+              : "landing-services__header"
+          }
         >
           <h1 className="btn-shine">Services</h1>
         </div>
 
-        {/* CONTENT */}
-        <div className="servicesDes">
+        <div className="landing-services__body">
           <h3>Services Digitaux sur Mesure pour Vous</h3>
           <Carousel />
         </div>
-
-        {/* FOOTER */}
-        <div
-          ref={footerRef}
-          className={isVisible ? "servicesFooter show" : "servicesFooter"}
-        >
-          {/* <div className="servicesFooter-container">
-            <p>
-              Let’s grow your business together{" "}
-              <a href="#contact">Get a Free Quote</a>
-            </p>
-          </div> */}
-        </div>
-
       </div>
-    </div>
+    </section>
   );
 }

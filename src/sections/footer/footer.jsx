@@ -1,9 +1,21 @@
 import "./footer.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+
 export default function Footer() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const goToHome = () => {
+    if (location.pathname === "/" && !location.hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      return;
+    }
+
+    navigate("/");
+  };
+
   return (
-    <>
+    < >
       <div className="footer-container">
         <div className="footer-block1">
           <p>
@@ -34,23 +46,26 @@ export default function Footer() {
               <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
             </svg>
           </button>
+          
         </div>
         <hr />
         <div className="footer-block2">
           <div className="company">
-            <h3>Entreprise</h3>
-            <h5 className="EFT">
-              <a href="#home">HOME</a>
-            </h5>
+            <h3>Agence</h3>
+            <h5 className="eft" onClick={goToHome}>HOME</h5>
             <h5 className="eft"><a href="#about">ABOUT</a></h5>
             <h5 className="eft"><a href="#services">Services</a></h5>
             <h5 className="eft"><a href="#faqs">Faqs</a></h5>
             <h5 className="eft" onClick={() => navigate("/contact")} >Contact</h5>
+             <div className="footer-block3">
+        <h6>© Copyright 2026 by Megabyteee.com</h6>
+      </div>
           </div>
           <div className="company">
             <h3>Contact</h3>
             <h5>+212 704 582 243</h5>
             <h5>Maroc,Casablanca</h5>
+            
             <ul className="example-2">
               <li className="icon-content">
                 <a
@@ -124,13 +139,13 @@ export default function Footer() {
                 <div className="tooltip">Instagram</div>
               </li>
             </ul>
+           
           </div>
         </div>
-        <hr />
+       
+        
       </div>
-      <div className="footer-block3">
-        <h6>© Copyright 2026 by Megabit.com</h6>
-      </div>
+      
     </>
   );
 }

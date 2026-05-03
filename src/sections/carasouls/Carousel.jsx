@@ -8,7 +8,7 @@ const CARDS = [
   {
     title: "Création de Sites Web Professionnels",
     desc: "Nous concevons des sites web modernes, rapides et entièrement adaptés à tous les appareils avec optimisation SEO",
-    img: "https://i.pinimg.com/736x/60/9e/aa/609eaa4321ab5ba8f0b7a9828192873c.jpg",
+    img: "https://i.pinimg.com/736x/27/aa/6e/27aa6eae6877b9a16afdc69e0b925ed6.jpg",
     bg: "#9984d4",
   },
   {
