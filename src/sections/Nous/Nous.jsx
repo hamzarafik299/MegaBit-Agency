@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import { createObserver } from "../../animation/Observator";
+import { motion } from "framer-motion";
 import blog1 from "../../assets/blog1.jpg";
 import blog2 from "../../assets/blog2.jpg";
 import blog3 from "../../assets/blog3.jpg";
@@ -34,29 +33,19 @@ const reasons = [
   },
 ];
 
+const revealProps = {
+  initial: { opacity: 0, y: 40 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.2 },
+  transition: { duration: 0.6, ease: "easeOut" },
+};
+
 export default function Nous() {
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
   const loopedImages = [...images, ...images];
-
-  useEffect(() => {
-    if (!ref.current) return;
-
-    const observer = createObserver((entry, isVisible) => {
-      setVisible(isVisible);
-    });
-
-    observer.observe(ref.current);
-
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <div className="nous">
-      <div
-        ref={ref}
-        className={visible ? "nous-container show" : "nous-container"}
-      >
+      <motion.div className="nous-container" {...revealProps}>
         <h1 className="btn-shine">Pourquoi nous</h1>
         <h2 className="nousH">
           {"Pourquoi les entreprises font confiance \u00E0 notre "}
@@ -82,7 +71,7 @@ export default function Nous() {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

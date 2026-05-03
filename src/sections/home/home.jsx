@@ -62,9 +62,16 @@ export default function Home() {
           <hr />
           <div className="homeSecond">
             <h3>
+              
               <BlurText
                 text="Megabit est une agence digitale spécialisée dans la création de stratégies
-performantes, de solutions créatives et de systèmes digitaux conçus pour accélérer
+performantes,"
+                delay={100}
+                animateBy="words"
+                direction="top"
+              />
+              <BlurText
+                text=" de solutions créatives et de systèmes digitaux conçus pour accélérer
 la croissance des entreprises"
                 delay={100}
                 animateBy="words"

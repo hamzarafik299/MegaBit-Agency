@@ -1,64 +1,59 @@
-.secondService{
-   margin-top: 100px;
-   
-   
+.secondService {
+  margin-top: 100px;
 }
-.secondService-first{
-    height: 83vh;
-    background: 
-    linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.5)),
+.secondService-first {
+  height: calc(100vh - 100px);
+  background:
+    linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)),
     url("../../assets/serviceSecond1.png");
-    background-size: cover;
-    background-position: center;
-    background-color: rgba(0, 0, 0, 0.13);
-    display: flex;
-    
-    justify-content: center;
-   box-shadow: 1px 1px 1px black;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.13);
+  display: flex;
+
+  justify-content: center;
+  box-shadow: 1px 1px 1px black;
 }
-.secondService-first h1{
-    color: white;
-    font-size: 7rem;
-    text-align: center;
-    margin-top: 100px;
-    color: #ffffffc9;
-   
+.secondService-first h1 {
+  color: white;
+  font-size: 7rem;
+  text-align: center;
+  margin-top: 100px;
+  color: #ffffffc9;
 }
-.secondService-second{
-    min-height: 100vh;
-     background: 
+.secondService-second {
+  min-height: 100vh;
+  background:
     linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
     url("https://i.pinimg.com/736x/60/35/14/6035143123a8a241576ed9e377ad851a.jpg");
-    background-size: cover;
-    background-position: center;
-   
+  background-size: cover;
+  background-position: center;
 }
-.card-service{
-    display: flex;
-    min-width: 80%;
-    padding: 100px;
-    justify-content: space-around;
-  
-    flex-direction: column;
+.card-service {
+  display: flex;
+  min-width: 80%;
+  padding: 100px;
+  justify-content: space-around;
+
+  flex-direction: column;
 }
-.image-service img{
-    min-width:25rem;
-    padding: 20px;
-    border-radius: 48px;
-    max-height: 35rem;
+.image-service img {
+  min-width: 25rem;
+  padding: 20px;
+  border-radius: 48px;
+  max-height: 33rem;
 }
 
-.image-service{
-    display:flex;
+.image-service {
+  display: flex;
 }
-.image-service p{
-    font-size: 1.4rem;
-    padding: 20px;
-    font-family: poppins , 'sans serif';
-    color: var(--third-color);
-    font-weight: 600;
-    margin-bottom: 30px;
-    opacity: 0.6;
+.service-text p {
+  font-size: 1.4rem;
+  padding: 20px;
+  color: var(--third-color);
+  font-weight: 600;
+  margin-bottom: 30px;
+  opacity: 0.6;
 }
 
 .services-container {
@@ -71,7 +66,6 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
 .services-title {
   text-align: center;
   margin-bottom: 20px;
@@ -80,13 +74,11 @@
   color: #ffffff9e;
 }
 
-
 .services-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 
 .service-item {
   display: flex;
@@ -101,20 +93,17 @@
   border: 1px solid transparent;
 }
 
-
 .service-item:hover {
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   border: 1px solid var(--fourth-color);
 }
 
-
 .service-icon {
   color: var(--fourth-color);
   font-size: 18px;
   min-width: 24px;
 }
-
 
 .service-text {
   font-size: 16px;
@@ -125,9 +114,9 @@
 .service-item {
   animation: fadeInUp 0.4s ease forwards;
 }
-.service-item span{
-    font-size: 20px;
-    font-weight: 600;
+.service-item span {
+  font-size: 20px;
+  font-weight: 600;
 }
 @keyframes fadeInUp {
   from {

@@ -17,14 +17,6 @@
   margin: 0 auto;
   padding: clamp(1rem, 3vw, 1.25rem);
   overflow: hidden;
-  opacity: 0;
-  transform: translateY(100px);
-  transition: all 1s ease;
-}
-
-.landing-services__container.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .landing-services__header {
@@ -35,14 +27,6 @@
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   text-align: center;
-  opacity: 0;
-  transform: translateY(100px);
-  transition: all 1s ease;
-}
-
-.landing-services__header.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .landing-services__header h1 {

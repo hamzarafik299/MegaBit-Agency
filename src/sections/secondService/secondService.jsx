@@ -3,8 +3,9 @@ import "./secondService.css";
 import BlurText from "../../animation/BlurText";
 import PageTransition from "../../animation/PageTransition";
 import Footer from "../../sections/footer/footer";
+import { motion } from "framer-motion";
 import React from "react";
-import Image2 from "../../assets/secondService2.png"
+import Image2 from "../../assets/secondService2.png";
 import {
   FaVideo,
   FaPaintBrush,
@@ -20,7 +21,6 @@ import {
   FaTools,
   FaGlobe,
 } from "react-icons/fa";
-
 
 import {
   FaShoppingCart,
@@ -111,13 +111,16 @@ export default function SecondService() {
             />
           </h1>
         </div>
-        <div className="secondService-second">
+        <motion.div
+          className="secondService-second"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="card-service">
-            <h1 className="services-title">
-              Gestion des Réseaux Sociaux 
-            </h1>
+            <h1 className="services-title">Gestion des Réseaux Sociaux</h1>
             <div className="image-service">
-              
               <div className="service-text">
                 <p>
                   Nous accompagnons les entreprises dans le développement de
@@ -139,12 +142,10 @@ export default function SecondService() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
         <div className="secondService-second">
           <div className="card-service">
-            <h1 className="services-title">
-              Création de Sites Web
-            </h1>
+            <h1 className="services-title">Création de Sites Web</h1>
             <div className="image-service">
               <img
                 src="https://i.pinimg.com/1200x/ae/e2/ab/aee2ab90ba9cf6e4dd765dfeefbb4f2a.jpg"
@@ -157,15 +158,14 @@ export default function SecondService() {
                   complète et stratégique.
                 </p>
                 <ul className="services-list">
-        {webServices.map((service, index) => (
-          <li key={index} className="service-item">
-            <span className="service-icon">{service.icon}</span>
-            <span className="service-text">{service.title}</span>
-          </li>
-        ))}
-      </ul>
+                  {webServices.map((service, index) => (
+                    <li key={index} className="service-item">
+                      <span className="service-icon">{service.icon}</span>
+                      <span className="service-text">{service.title}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              
             </div>
           </div>
         </div>
@@ -175,7 +175,6 @@ export default function SecondService() {
               Création de Systèmes de Gestion Sur Mesure
             </h1>
             <div className="image-service">
-              
               <div className="service-text">
                 <p>
                   Nous accompagnons les entreprises dans le développement de
@@ -183,13 +182,13 @@ export default function SecondService() {
                   complète et stratégique.
                 </p>
                 <ul className="services-list">
-        {automationServices.map((service, index) => (
-          <li key={index} className="service-item">
-            <span className="service-icon">{service.icon}</span>
-            <span className="service-text">{service.title}</span>
-          </li>
-        ))}
-      </ul>
+                  {automationServices.map((service, index) => (
+                    <li key={index} className="service-item">
+                      <span className="service-icon">{service.icon}</span>
+                      <span className="service-text ">{service.title}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
               <img
                 src="https://i.pinimg.com/1200x/71/a0/36/71a036681c5054c33773da4fcfa61f41.jpg"
@@ -199,7 +198,7 @@ export default function SecondService() {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer  />
     </PageTransition>
   );
 }

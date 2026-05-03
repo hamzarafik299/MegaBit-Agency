@@ -10,14 +10,6 @@
 .weare-container {
   width: min(100%, 1200px);
   margin: 0 auto;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease;
-}
-
-.weare-container.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .weare h1 {
@@ -192,7 +184,6 @@
 
   .weare h3 {
     font-size: 1rem;
-
   }
 
   .wearCtn {
