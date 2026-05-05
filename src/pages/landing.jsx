@@ -12,7 +12,7 @@ export default function Landing() {
     <PageTransition>
       <main className="landing-page">
         <Home />
-        <WeAre />
+      
         <Services />
         <Nous />
         <Faqs />

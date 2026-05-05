@@ -50,7 +50,7 @@ function AnimatedRoutes() {
 
 export default function App() {
   return (
-    <BrowserRouter basename="/MegaBit-Agency">
+    <BrowserRouter>
       <Cursor />
       <AnimatedRoutes />
     </BrowserRouter>
