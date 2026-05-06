@@ -1,7 +1,9 @@
 import "./contacts.css";
+import BlurText from "../../animation/BlurText";
 import logo from "../../assets/logo.png";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import Header from "../../animation/header";
 import PageTransition from "../../animation/PageTransition";
 
 export default function Contact() {
@@ -32,7 +34,18 @@ export default function Contact() {
 
   return (
     <PageTransition>
+      <Header />
       <div className="contacts" id="contacts">
+         <div className="secondService-first">
+          <h1>
+            <BlurText
+              text="CONTACTS"
+              delay={200}
+              animateBy="words"
+              direction="top"
+            />
+          </h1>
+        </div>
         <div className="contactHeader">
           <img src={logo} alt="Logo" />
           <h1>Contact Us</h1>
@@ -41,7 +54,7 @@ export default function Contact() {
         <div className="form-container">
           <form ref={form} className="form" onSubmit={sendEmail}>
             <div className="form-group">
-              <label>Nom & Pr\u00E9nom</label>
+              <label>Nom & Prenom</label>
               <input type="text" name="name" required />
             </div>
 
@@ -51,7 +64,7 @@ export default function Contact() {
             </div>
 
             <div className="form-group">
-              <label>Num\u00E9ro</label>
+              <label>Numero</label>
               <input type="tel" name="phone" required />
             </div>
 

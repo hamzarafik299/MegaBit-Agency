@@ -128,3 +128,25 @@
     transform: translateY(0);
   }
 }
+@media (max-width: 768px){
+  .secondService-first {
+  height: calc(50vh - 100px);
+  }
+  .secondService-first h1{
+    font-size: 3rem;
+  }
+  .card-service{
+   padding: 0;
+  }
+  .services-title{
+    font-size: 2rem;
+    
+    margin-top: 48px;
+  }
+  .image-service{
+    flex-direction: column;
+  }
+  .about-text p,.service-text p{
+    text-align: center;
+  }
+}

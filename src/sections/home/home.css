@@ -30,7 +30,7 @@
   opacity: 0;
 }
 .menu.active {
-  transform: translateY(-16%);
+  transform: translateY(6%);
 
   opacity: 1;
 }
@@ -69,7 +69,7 @@
 .logo img {
   width: clamp(4rem, 6vw, 14rem);
   margin: 20px 50px;
-  opacity: 0.35;
+  opacity: 0.65;
 }
 
 .firstText img:nth-child(1) {
@@ -242,7 +242,7 @@
   position: absolute;
   height: 4px;
   width: 100%;
-  background: #2c1841;
+  background: #c9a8f57a;
   border-radius: 9px;
   opacity: 1;
   box-shadow: 1px 1px 1px var(--palette-second);
@@ -796,7 +796,7 @@ hr {
   }
   .body > .text h1 {
     max-width: 100%;
-    font-size: 4rem;
+    font-size: 3.8rem;
     line-height: 1;
     letter-spacing: 0;
   }

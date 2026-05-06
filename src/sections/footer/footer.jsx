@@ -15,8 +15,7 @@ export default function Footer() {
   };
 
   return (
-    < >
-    
+    <>
       <div className="footer-container">
         <div className="footer-block1">
           <p>
@@ -47,32 +46,38 @@ export default function Footer() {
               <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
             </svg>
           </button>
-          
         </div>
         <hr />
         <div className="footer-block2">
           <div className="company">
             <h3>Agence</h3>
-            <h5 className="eft" onClick={goToHome}>HOME</h5>
-            <h5 className="eft"><a href="#about">ABOUT</a></h5>
-            <h5 className="eft"><a href="#services">Services</a></h5>
-            <h5 className="eft"><a href="#faqs">Faqs</a></h5>
-            <h5 className="eft" onClick={() => navigate("/contact")} >Contact</h5>
-             <div className="footer-block3">
-        <h6>© Copyright 2026 by Megabyteee.com</h6>
-      </div>
+            <h5 className="eft" onClick={goToHome}>
+              HOME
+            </h5>
+            <h5 className="eft" onClick={() => navigate("/about")}>
+              ABOUT
+            </h5>
+            <h5 className="eft" onClick={() => navigate("/services")}>
+              Services
+            </h5>
+            <h5 className="eft" onClick={() => navigate("/contact")}>
+              <a href="#contact">Contact</a>
+            </h5>
+            <div className="footer-block3">
+              <h6>© Copyright 2026 by Megabyteee.com</h6>
+            </div>
           </div>
           <div className="company">
             <h3>Contact</h3>
             <h5>+212 704 582 243</h5>
             <h5>Maroc,Casablanca</h5>
-            
+
             <ul className="example-2">
               <li className="icon-content">
                 <a
                   data-social="whatsapp"
                   aria-label="Whatsapp"
-                  href="https://api.whatsapp.com/send?phone=+112067101079&text=Save%20this%20to%20your%20Favorites%20-%20@wilsondesouza"
+                  href="https://wa.me/212704582243"
                 >
                   <div className="filled"></div>
                   <svg
@@ -140,13 +145,9 @@ export default function Footer() {
                 <div className="tooltip">Instagram</div>
               </li>
             </ul>
-           
           </div>
         </div>
-       
-        
       </div>
-      
     </>
   );
 }
